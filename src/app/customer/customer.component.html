@@ -1,0 +1,54 @@
+<label>Customer ID : </label>
+
+<input type="number" name="customerid" [formControl]="customerid">
+
+<br />
+
+<p>
+    <button (click)="onClickSubmit()">get customer</button>
+</p>
+
+<table *ngIf="customer">
+    <tr>
+        <th>CustomerId</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>address</th>
+    </tr>
+    <tr>
+        <td>{{customer.customerId}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.surname}}</td>
+        <td>{{customer.addresse}}</td>
+    </tr>
+</table>
+<div *ngFor="let account of customer.accounts">
+    <table>
+        <tr>
+            <th>AccountId</th>
+            <th>title</th>
+            <th>description</th>
+            <th>creation_date</th>
+            <th>isClosed</th>
+        </tr>
+        <tr>
+            <td>{{account.accountId}}</td>
+            <td>{{account.title}}</td>
+            <td>{{account.description}}</td>
+            <td>{{account.creation_date}}</td>
+            <td>{{account.is_closed}}</td>
+        </tr>
+    </table>
+    <table *ngFor="let transaction of account.transactions">
+        <tr>
+            <th>TransactionId</th>
+            <th>balance</th>
+            <th>type</th>
+        </tr>
+        <tr>
+            <td>{{transaction.transactionId}}</td>
+            <td>{{transaction.balance}}</td>
+            <td>{{transaction.transaction_type}}</td>
+        </tr>
+    </table>
+</div>
