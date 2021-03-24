@@ -1,3 +1,5 @@
+<br/>
+<br/>
 <label>Customer ID : </label>
 
 <input type="number" name="customerid" [formControl]="customerid">
@@ -8,6 +10,7 @@
     <button (click)="onClickSubmit()">get customer</button>
 </p>
 
+Customer : 
 <table *ngIf="customer">
     <tr>
         <th>CustomerId</th>
@@ -22,8 +25,10 @@
         <td>{{customer.addresse}}</td>
     </tr>
 </table>
-<div *ngFor="let account of customer.accounts">
-    <table>
+Customer Accounts :
+
+<div *ngFor="let account of customer.accounts;let i = index;">
+    <div style="display: inline;">==Account {{i+1}}==></div><table>
         <tr>
             <th>AccountId</th>
             <th>title</th>
@@ -39,7 +44,9 @@
             <td>{{account.is_closed}}</td>
         </tr>
     </table>
-    <table *ngFor="let transaction of account.transactions">
+    Account {{i+1}} transactions :
+    <table *ngFor="let transaction of account.transactions;let j = index;">
+        <div style="display: inline;">==Trnsaction {{j+1}}==></div>
         <tr>
             <th>TransactionId</th>
             <th>balance</th>

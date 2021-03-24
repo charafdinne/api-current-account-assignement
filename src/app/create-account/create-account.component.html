@@ -1,1 +1,12 @@
-<p>create-account works!</p>
+<br/>
+<br/>
+<label>Customer ID : </label>
+
+<input type="number" name="customerid" [formControl]="customerid">
+<input type="number" name="balance" [formControl]="balance">
+
+<br />
+
+<p>
+    <button (click)="onClickSubmit()">get customer</button>
+</p>
