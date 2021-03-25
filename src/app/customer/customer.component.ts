@@ -14,7 +14,7 @@ export class CustomerComponent implements OnInit {
   customerid = new FormControl('1');
   
   customer = {} as Customer;
-    
+  errorMessage : string;
   constructor(private dataService : DataService) {
   }
 

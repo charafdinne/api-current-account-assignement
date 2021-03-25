@@ -51,6 +51,7 @@ export class DataService {
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
 
+      window.alert(error.error.message);
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
